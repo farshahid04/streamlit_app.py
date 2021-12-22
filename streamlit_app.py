@@ -68,7 +68,7 @@ st.dataframe(st.bar1)
 st.caption('Acute care hospitals is the most common hospital type in New York ')
 
 st.subheader('Visual Representation of hospital types:')
-st.fig = px.pie(bar1, values='hospital_type', names='index')
+st.fig = px.pie(st.bar1, values='hospital_type', names='index')
 st.plotly_chart(fig)
 st.caption('Different hospital types in the New York Area above, with acute care hospitals taking a huge chunk')
 
