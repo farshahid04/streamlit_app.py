@@ -61,16 +61,6 @@ st.header('Inpatient Data Preview')
 st.dataframe(df_inpatient_1)
 
 
-#Bar Chart
-st.subheader('Hospital Type in New York')
-st.bar1_chart = pd.df_hospital_1['hospital_type'].value_counts().reset_index()
-st.dataframe(st.bar1)
-st.caption('Acute care hospitals is the most common hospital type in New York ')
-
-st.subheader('Visual Representation of hospital types:')
-st.fig = px.pie(st.bar1, values='hospital_type', names='index')
-st.plotly_chart(fig)
-st.caption('Different hospital types in the New York Area above, with acute care hospitals taking a huge chunk')
 
 #Timeliness of Care
 ny_hospitals = df_hospital_1[df_hospital_1['state'] == 'NY']
@@ -248,4 +238,16 @@ st.plotly_chart(fig5)
 st.markdown('6. How does New Yorks mortality rate compare with North Carolinas mortality rate?')
 st.markdown('- Based on the bar charts above, we can see the mortality rate is 60% for NC hospitals and close to 100%\
            for NY hospitals, both remaining around the same as the national average')
+
+
+#Bar Chart
+st.subheader('Hospital Type in New York')
+st.bar1_chart = pd.df_hospital_1['hospital_type'].value_counts().reset_index()
+st.dataframe(st.bar1)
+st.caption('Acute care hospitals is the most common hospital type in New York ')
+
+st.subheader('Visual Representation of hospital types:')
+st.fig = px.pie(st.bar1, values='hospital_type', names='index')
+st.plotly_chart(fig)
+st.caption('Different hospital types in the New York Area above, with acute care hospitals taking a huge chunk')
 
