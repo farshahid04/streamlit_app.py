@@ -1,9 +1,7 @@
 import pandas as pd
-import pandas as pd
 import streamlit as st
 import numpy as np
 import time
-import plotly
 
 
 hospitaldf = pd.read_csv('https://raw.githubusercontent.com/hantswilliams/AHI_DataSci_507/main/Deployment_Streamlit/hospital_info.csv')
