@@ -61,34 +61,6 @@ st.header('Inpatient Data Preview')
 st.dataframe(df_inpatient_1)
 
 
-
-#Timeliness of Care
-ny_hospitals = df_hospital_1[df_hospital_1['state'] == 'NY']
-
-nc_hospitals = df_hospital_1[df_hospital_1['state'] == 'NC']
-
-
-st.subheader('NY Hospitals - Timeliness of Care')
-bar2 = ny_hospitals['timeliness_of_care_national_comparison'].value_counts().reset_index()
-fig2 = px.bar(bar2, x='index', y='timeliness_of_care_national_comparison')
-st.plotly_chart(fig2)
-st.caption('Majority of hospitals in the NY area fall below the national\
-        average as it relates to timeliness of care')
-
-st.subheader('NC Hospitals - Timeliness of Care')
-bar4 = nc_hospitals['timeliness_of_care_national_comparison'].value_counts().reset_index()
-fig5 = px.bar(bar4, x='index', y='timeliness_of_care_national_comparison')
-st.plotly_chart(fig5)
-st.caption('Based on the bar chart above, we can see the the timeliness\
-           of care data for the majority of hospitals in the North Carolina area \
-               is the same as the national average and a little bit below the national average')
-
-
-
-st.markdown('1. What are the most common hospital types and where does New York rank in regards to timeliness of care?')
-st.markdown('- As shown by the analysis above, the most common hospital type in NY is acute care (144 acute care hospitals).\
-            In terms of ranking, most of the New York Hospitals are below national average in regards to timeliness of care')  
-
 ##INPATIENT and OUTPATIENT 
 st.title('Inpatient and outpatient dataframes')
 st.markdown('The dataframe displayed below is for the Inpatient facility')
@@ -251,3 +223,29 @@ st.fig = px.pie(st.bar1, values='hospital_type', names='index')
 st.plotly_chart(fig)
 st.caption('Different hospital types in the New York Area above, with acute care hospitals taking a huge chunk')
 
+#Timeliness of Care
+ny_hospitals = df_hospital_1[df_hospital_1['state'] == 'NY']
+
+nc_hospitals = df_hospital_1[df_hospital_1['state'] == 'NC']
+
+
+st.subheader('NY Hospitals - Timeliness of Care')
+bar2 = ny_hospitals['timeliness_of_care_national_comparison'].value_counts().reset_index()
+fig2 = px.bar(bar2, x='index', y='timeliness_of_care_national_comparison')
+st.plotly_chart(fig2)
+st.caption('Majority of hospitals in the NY area fall below the national\
+        average as it relates to timeliness of care')
+
+st.subheader('NC Hospitals - Timeliness of Care')
+bar4 = nc_hospitals['timeliness_of_care_national_comparison'].value_counts().reset_index()
+fig5 = px.bar(bar4, x='index', y='timeliness_of_care_national_comparison')
+st.plotly_chart(fig5)
+st.caption('Based on the bar chart above, we can see the the timeliness\
+           of care data for the majority of hospitals in the North Carolina area \
+               is the same as the national average and a little bit below the national average')
+
+
+
+st.markdown('1. What are the most common hospital types and where does New York rank in regards to timeliness of care?')
+st.markdown('- As shown by the analysis above, the most common hospital type in NY is acute care (144 acute care hospitals).\
+            In terms of ranking, most of the New York Hospitals are below national average in regards to timeliness of care')
